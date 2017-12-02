@@ -10,10 +10,10 @@ const problemTwo = () => {
 
 const sumDigits = (distance = 1) => {
   let total = 0
-  for (let i = 0; i < input.length; i++) {
-    const checkIdx = ((i + distance) % input.length)
-    if (input[i] === input[checkIdx]){ total += Number(input[i]) }
-  }
+  input.split("").forEach((digit, idx) => {
+    const checkIdx = ((idx + distance) % input.length)
+    if (digit === input[checkIdx]){ total += Number(digit) }
+  })
   return total
 }
 
